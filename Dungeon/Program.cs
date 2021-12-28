@@ -38,13 +38,13 @@ namespace Dungeon
                                                            ###  ");
 
             //Create Player
-            Player player = new Player("Batman", 0, 0, 3);
+            Player player = new Player("Batman", 0, 0, 1);
             //Create Enemy
             Enemy enemy = new Enemy("?The Riddler?", 200, "desc");
 
             //Create a loop for enemy and room
             int Level = 1;
-            bool exit = true;
+            bool exit = false;
 
             do
             {
@@ -74,16 +74,25 @@ E) Exit
                             {
                                 Console.WriteLine("Correct, you may proceed! You received some loot.");
                                 Console.WriteLine(room.Loot);
+                                player.RiddlesAnswered++;
                                 Console.WriteLine();
-                                // Room room = GetRoom(Level);
-                                // Console.WriteLine(room.RoomDescription);
+                                Level++;
+                                if (Level == 5)
+                                {
+                                    Console.WriteLine("You solved the riddle but you The Riddler escaped...!!\n");
+                                    exit = true;
+                                }
+                                else 
+                                {
+                                reload = true;
+
+                                }
                             }
                             
                             else if (input != room.Answer)
                             {
-                                Console.WriteLine("Are you even trying?\n");
-                                exit = false;
-                                // player.Chances++;
+                                Console.WriteLine("Are you even trying?\n");   
+                                player.Chances++;
                             }
                             break;
 
@@ -100,6 +109,12 @@ E) Exit
                             break;
                     }// end switch
 
+
+                    if (player.Chances > 3)
+                    {
+                        Console.WriteLine("You let The Riddler outriddle you....Better luck next time!"); 
+                        exit = true;
+                    }
                 } while (!reload && !exit);
             } while (!exit);
         }//end Main()
@@ -117,7 +132,8 @@ E) Exit
               "If you look at the numbers on my face, you won't find 13 anyplace.", "A Clock", 100 ),
 
               new Room ("It's a huge empty room...checkard tiled floor with weird shaped statues. " +
-              "One of the statues has a hat and sign on it. It's another riddle....",
+              "One of the statues has a hat and sign on it.\n " +
+              " It's another riddle....",
               "The eight of us go forth, not back, to protect our king from a foe's attack.", "Chess Pawns", 100),
 
               new Room ("?ITS THE RIDDLER? The gig is up Riddler, but first I have a riddle for you" ,

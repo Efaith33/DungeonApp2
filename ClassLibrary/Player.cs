@@ -19,10 +19,7 @@ namespace ClassLibrary
             get { return _chances; }
             set
             {
-                if (value <= 3)
-                {
-                    _chances = value;
-                }
+                _chances = value;              
             }//end set
         }//end chances
 
