@@ -72,14 +72,14 @@ namespace Dungeon
                             string input = (Console.ReadLine());
                             if (input == room.Answer)
                             {
-                                Console.WriteLine(" Correct, you may proceed! You received some loot.");
+                                Console.WriteLine(" Congrats, You solved the riddle... You received some loot.");
                                 Console.WriteLine(room.Loot);
                                 player.RiddlesAnswered++;
                                 Console.WriteLine();
                                 Level++;
                                 if (Level == 5)
                                 {
-                                    Console.WriteLine(" You solved the riddle but you The Riddler escaped...!!\n");
+                                    Console.WriteLine(" OH NO... you got distracted by the riddlers games and let him escape...!!\n");
                                     exit = true;
                                 }
                                 else 
@@ -97,7 +97,7 @@ namespace Dungeon
                             break;
 
                         case "E":
-                            Console.WriteLine(" Crimefighting never take a day off... see you soon!!\n");
+                            Console.WriteLine(" Crimefighting never takes a day off... see you soon!!\n");
                             exit = true;
                             break;
 
@@ -137,7 +137,7 @@ namespace Dungeon
               " The eight of us go forth, not back, to protect our king from a foe's attack.", "Chess Pawns", 100),
 
               new Room (" ?ITS THE RIDDLER? The gig is up Riddler, but first I have a riddle for you" ,
-              " I see without seeing. To me, darkness is as clear as daylight", "A Bat", 100)
+              " I see without seeing. To me, darkness is as clear as daylight...What am I ?", "A Bat", 100)
 
             };
 
