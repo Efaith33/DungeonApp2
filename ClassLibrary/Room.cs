@@ -11,14 +11,14 @@ namespace ClassLibrary
         public string RoomDescription { get; set; }
         public string Riddle { get; set; }
         public string Answer { get; set; }
-        public decimal Loot { get; set; }
+        public int Score { get; set; }
 
-        public Room(string roomDescription, string riddle, string answer, decimal loot)
+        public Room(string roomDescription, string riddle, string answer, int score)
         {
             RoomDescription = roomDescription;
             Riddle = riddle;
             Answer = answer;
-            Loot = loot;
+            Score = Score;
         }
     }
 

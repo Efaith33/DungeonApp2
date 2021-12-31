@@ -13,7 +13,7 @@ namespace ClassLibrary
 
         //people / properties
         public string Name { get; set; }
-        public decimal Money { get; set; }
+        public int score { get; set; }
 
         //collect / constructors
         

@@ -12,16 +12,15 @@ namespace ClassLibrary
 
         //people / properties
         public string Description { get; set; }
-        public string Riddle { get; set; }
-        public string Answer { get; set; }
-        
+        public int Score { get; set; }
+
         //collect / constructors
         public Enemy() {}
 
-        public Enemy(string name, decimal money, string description)
+        public Enemy(string name, int score, string description)
         {
             Name = name;
-            Money = money;
+            Score = score;
             Description = description;
         }
 

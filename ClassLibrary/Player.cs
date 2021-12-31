@@ -13,7 +13,7 @@ namespace ClassLibrary
 
         //people / properties
         public int RiddlesAnswered { get; set; }
-
+        public int Score { get; set; }
         public int Chances
         {
             get { return _chances; }
@@ -24,11 +24,11 @@ namespace ClassLibrary
         }//end chances
 
         //collect / constructors
-        public Player(string name, int riddlesAnswered, decimal money, int chances)
+        public Player(string name, int riddlesAnswered, int score, int chances)
         {
             Name = name;
             RiddlesAnswered = riddlesAnswered;
-            Money = money;
+            Score = score;
             Chances = chances;
         }//end FQ CTOR
 
