@@ -73,7 +73,10 @@ namespace Dungeon
                             if (input == room.Answer.ToUpper())
                             {
                                 Console.WriteLine(" Well done, You solved the riddle!");
-                                Console.WriteLine(room.Score);
+                                Console.WriteLine("You gained " + room.Score + " points.");
+                                player.Score += room.Score;
+                                Console.WriteLine();
+                                Console.WriteLine($"Your total score is now {player.Score}!");
                                 player.RiddlesAnswered++;
                                 Console.WriteLine();
                                 Level++;
@@ -129,7 +132,7 @@ namespace Dungeon
               " Tear one off and scratch my head. What once was red is black instead.", "A Match".ToUpper(), 100),
 
               new Room (" A dark, damp room... lots of steampipes and valves. The valves look like clocks but no numbers...." +  " writing on the wall.... a riddle.",
-              " If you look at the numbers on my face, you won't find 13 anyplace.", "A Clock".ToUpper(), 200 ),
+              " If you look at the numbers on my face, you won't find 13 anyplace.", "A Clock".ToUpper(), 200),
 
               new Room (" It's a huge empty room...checkard tiled floor with weird shaped statues. " +
               " One of the statues has a hat and sign on it.\n " +

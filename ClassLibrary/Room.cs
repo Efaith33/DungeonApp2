@@ -18,7 +18,7 @@ namespace ClassLibrary
             RoomDescription = roomDescription;
             Riddle = riddle;
             Answer = answer;
-            Score = Score;
+            Score = score;
         }
     }
 
